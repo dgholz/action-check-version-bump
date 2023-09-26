@@ -31,4 +31,4 @@ runs:
         files_changed "${{ inputs.pr-number }}" | tee files_changed.log
         echo ::endgroup::
 
-        grep -f CHANGELOG.md files_changed.log && grep 'lib/.*/version[.][^.]*$' files_changed.log
+        grep -q -f CHANGELOG.md files_changed.log && grep -q 'lib/.*/version[.][^.]*$' files_changed.log
