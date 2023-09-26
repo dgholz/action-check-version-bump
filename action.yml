@@ -1,0 +1,26 @@
+name: Check for version bumps
+author: Daniel Holz
+description: Looks for changes to `CHANGELOG.md` & a `version` file in a PR, and fails if it can't find both.
+
+inputs:
+outputs:
+
+runs:
+  using: composite
+  steps:
+    - run: |
+        exec 19> >( sed -e's/^/::debug::/g' )
+        BASH_XTRACEFD=19
+        export DEBUG=api
+        set -x
+
+        function files_changed() {
+          local pr="$1"
+          gh api repos/"${{ github.repository }}/pulls/$pr/files" --jq .[].filename 2>&19 |
+        }
+
+        echo ::group::Changed files::
+        files_changed "${{ inputs.pr_number }}" | tee files_changed.log
+        echo ::endgroup::
+
+        grep -f CHANGELOG.md files_changed.log && grep 'lib/.*/version[.][^.]*$' files_changed.log
