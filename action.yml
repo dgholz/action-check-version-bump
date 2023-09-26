@@ -6,12 +6,15 @@ input:
   pr-number:
     description: 'PR to look at for changed files'
     required: true
+  gh-token:
+    description: 'PAT for gh'
+    required: true
 
 runs:
   using: composite
   steps:
     - env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ inputs.gh-token }}
       run: |
         exec 19> >( sed -e's/^/::debug::/g' )
         BASH_XTRACEFD=19
