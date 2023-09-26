@@ -2,13 +2,17 @@ name: Check for version bumps
 author: Daniel Holz
 description: Looks for changes to `CHANGELOG.md` & a `version` file in a PR, and fails if it can't find both.
 
-inputs:
-outputs:
+input:
+  pr-number:
+    description: 'PR to look at for changed files'
+    required: true
 
 runs:
   using: composite
   steps:
-    - run: |
+    - env:
+        GH_TOKEN: ${{ secrets.github }}
+      run: |
         exec 19> >( sed -e's/^/::debug::/g' )
         BASH_XTRACEFD=19
         export DEBUG=api
