@@ -15,6 +15,7 @@ runs:
   steps:
     - env:
         GH_TOKEN: ${{ inputs.gh-token }}
+      shell: bash
       run: |
         exec 19> >( sed -e's/^/::debug::/g' )
         BASH_XTRACEFD=19
