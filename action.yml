@@ -24,7 +24,7 @@ runs:
 
         function files_changed() {
           local pr="$1"
-          gh api repos/"${{ github.repository }}/pulls/$pr/files" --jq .[].filename 2>&19 |
+          gh api repos/"${{ github.repository }}/pulls/$pr/files" --jq .[].filename 2>&19
         }
 
         echo ::group::Changed files::
