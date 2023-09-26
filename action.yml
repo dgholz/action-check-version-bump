@@ -2,7 +2,7 @@ name: Check for version bumps
 author: Daniel Holz
 description: Looks for changes to `CHANGELOG.md` & a `version` file in a PR, and fails if it can't find both.
 
-input:
+inputs:
   pr-number:
     description: 'PR to look at for changed files'
     required: true
