@@ -27,7 +27,7 @@ runs:
           gh api repos/"${{ github.repository }}/pulls/$pr/files" --jq .[].filename 2>&19
         }
 
-        echo ::group::Changed files
+        echo ::group::All Changed files from PR
         files_changed "${{ inputs.pr-number }}" | tee files_changed.log
         echo ::endgroup::
 
