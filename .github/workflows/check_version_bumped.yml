@@ -1,0 +1,11 @@
+name: Check version & CHANGELOG bumped
+
+jobs:
+  check-for-version-bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for version bump
+        uses: dgholz/action-check-version-bump@main
+        with:
+          pr-number: ${{ github.event.pull_request.number }}
+          gh-token: ${{ secrets.GITHUB_TOKEN }}
