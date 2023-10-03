@@ -1,7 +1,14 @@
 name: Check version & CHANGELOG bumped
 
 on:
-  pull_request:
+  workflow_call:
+    inputs:
+      pr-number:
+        required: true
+        type: string
+    secrets:
+      GITHUB_TOKEN:
+        required: true
 
 jobs:
   check-for-version-bump:

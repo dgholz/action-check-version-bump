@@ -6,15 +6,12 @@ inputs:
   pr-number:
     description: 'PR to look at for changed files'
     required: true
-  gh-token:
-    description: 'PAT for gh'
-    required: true
 
 runs:
   using: composite
   steps:
     - env:
-        GH_TOKEN: ${{ inputs.gh-token }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       shell: bash
       run: |
         env SHELLOPTS=xtrace "$GITHUB_ACTION_PATH"/src/check_version_bump.sh "${{ github.repository }}" "${{ inputs.pr-number }}"
