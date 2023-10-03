@@ -17,4 +17,4 @@ runs:
         GH_TOKEN: ${{ inputs.gh-token }}
       shell: bash
       run: |
-        env SHELLOPTS=xtrace "$GITHUB_ACTION_PATH"/src/check_version_bump.sh
+        env SHELLOPTS=xtrace "$GITHUB_ACTION_PATH"/src/check_version_bump.sh "${{ github.repository }}" "${{ inputs.pr-number }}"
