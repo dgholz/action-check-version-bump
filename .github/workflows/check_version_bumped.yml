@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check for version bump
-        uses: dgholz/action-check-version-bump@v1.2.7
+        uses: dgholz/action-check-version-bump@v1.2.8
         with:
           pr-number: ${{ github.event.pull_request.number }}
