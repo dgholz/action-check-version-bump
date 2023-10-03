@@ -15,7 +15,7 @@ check_for_changed_files() {
   tee files_changed.log
   echo ::endgroup::
 
-  grep -q -f CHANGELOG.md files_changed.log files_changed.log && grep -q 'lib/.*/version[.][^.]*$' files_changed.log
+  grep -q -f CHANGELOG.md files_changed.log && grep -q 'lib/.*/version[.][^.]*$' files_changed.log
 }
 
 main() {
