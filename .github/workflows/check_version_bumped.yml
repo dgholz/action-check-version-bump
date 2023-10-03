@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check for version bump
-        uses: dgholz/action-check-version-bump@1.2.1
+        uses: dgholz/action-check-version-bump@1.2.2
         with:
           pr-number: ${{ github.event.pull_request.number }}
           gh-token: ${{ secrets.GITHUB_TOKEN }}
