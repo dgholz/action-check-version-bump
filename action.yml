@@ -14,6 +14,6 @@ runs:
         GH_TOKEN: ${{ github.token }}
       shell: bash
       run: |
-        bash -x "$GITHUB_ACTION_PATH"/src/check_version_bump.sh -- \
+        bash -x "$GITHUB_ACTION_PATH"/src/check_version_bump.sh \
           "${{ github.repository }}" \
           "${{ inputs.pr-number }}"
