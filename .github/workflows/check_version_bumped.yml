@@ -1,5 +1,8 @@
 name: Check version & CHANGELOG bumped
 
+on:
+  pull_request:
+
 jobs:
   check-for-version-bump:
     runs-on: ubuntu-latest
