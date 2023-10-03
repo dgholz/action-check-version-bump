@@ -1,0 +1,26 @@
+{
+  "name": "action-check-version-bump",
+  "version": "1.0.0",
+  "description": "## Description",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgholz/action-check-version-bump.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dgholz/action-check-version-bump/issues"
+  },
+  "homepage": "https://github.com/dgholz/action-check-version-bump#readme",
+  "dependencies": {
+    "bats": "^1.10.0",
+    "bats-assert": "^2.0.0"
+  }
+}
