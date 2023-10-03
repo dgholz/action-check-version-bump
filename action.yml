@@ -11,7 +11,7 @@ runs:
   using: composite
   steps:
     - env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ github.token }}
       shell: bash
       run: |
         env SHELLOPTS=xtrace "$GITHUB_ACTION_PATH"/src/check_version_bump.sh "${{ github.repository }}" "${{ inputs.pr-number }}"

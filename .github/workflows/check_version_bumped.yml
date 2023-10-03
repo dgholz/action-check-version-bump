@@ -3,16 +3,12 @@ name: Check version & CHANGELOG bumped
 on:
   workflow_call:
     inputs:
-      pr-number:
-        required: true
-        type: string
 
 jobs:
   check-for-version-bump:
     runs-on: ubuntu-latest
     steps:
       - name: Check for version bump
-        uses: dgholz/action-check-version-bump@v1.2.3
+        uses: dgholz/action-check-version-bump@v1.2.4
         with:
           pr-number: ${{ github.event.pull_request.number }}
-          gh-token: ${{ secrets.GITHUB_TOKEN }}
